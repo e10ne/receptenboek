@@ -1,0 +1,44 @@
+.flex {
+    display: flex;
+    gap: 35px;
+}
+
+.flexVertical {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.flexHorizontal {
+    flex-direction: row;
+}
+
+.center {
+    text-align: center;
+}
+
+.marginTop50
+{
+    margin-top: 50px;
+}
+.marginBot30
+{
+    margin-bottom: 30px;
+}
+
+.recipeContainer {
+    width: 90%;
+    justify-content: space-evenly;
+}
+
+.buttonContainer
+{
+    width: 100%;
+    text-align: center;
+}
+
+.button
+{
+    width: 25%;
+    height: 50px;
+}
