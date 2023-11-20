@@ -20,25 +20,43 @@ declare(strict_types=1);
     <title>Recipe Book:</title>
 </head>
 
-<body>
-    <div class="flex flexVertical">
-        <h1 class="center marginTop50">Receptenboek:</h1>
+<body class="gridContainer">
+
+    <header class="header flex">
+        <h1>Receptenboek:</h1>
+    </header>
+
+    <nav class="navigation">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Add Recipe</a></li>
+            <li><a href="#">Add Category</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
         <div class="flex flexVertical">
-            <div class="flex flexHorizontal recipeContainer">
-                <a href=""><img src="https://placehold.co/400x300" alt=""></a>
-                <a href=""><img src="https://placehold.co/400x300" alt=""></a>
-                <a href=""><img src="https://placehold.co/400x300" alt=""></a>
+            <div class="flex flexVertical">
+                <div class="flex flexHorizontal recipeContainer">
+                    <a href=""><img src="https://placehold.co/300x200" alt=""></a>
+                    <a href=""><img src="https://placehold.co/300x200" alt=""></a>
+                    <a href=""><img src="https://placehold.co/300x200" alt=""></a>
+                </div>
+                <div class="flex flexHorizontal recipeContainer">
+                    <a href=""><img src="https://placehold.co/300x200" alt=""></a>
+                    <a href=""><img src="https://placehold.co/300x200" alt=""></a>
+                    <a href=""><img src="https://placehold.co/300x200" alt=""></a>
+                </div>
             </div>
-            <div class="flex flexHorizontal recipeContainer">
-                <a href=""><img src="https://placehold.co/400x300" alt=""></a>
-                <a href=""><img src="https://placehold.co/400x300" alt=""></a>
-                <a href=""><img src="https://placehold.co/400x300" alt=""></a>
+            <div class="buttonContainer">
+                <button class="button">Show More</button>
             </div>
-        </div>
-        <div class="marginBot30 buttonContainer">
-            <button class="button">Show More</button>
         </div>
     </div>
+
+    <footer class="footer flex">
+        <p class="center">Gemaakt door: Etienne en Sabrina</p>
+    </footer>
 
 </body>
 

@@ -1,6 +1,113 @@
+/* Color Schemes: */
+/* Sky:
+light blue: E0F4FF 
+blue: 87C4FF
+darker blue: 39A7FF
+tan: FFEED9*/
+
+/* Sunset: 
+dark purple: 22092C
+burgondy: 872341
+red: BE3144
+orange: F05941*/
+
+/* Coffee:
+brown: 876445
+caramel: CA965C
+light brown: EEC373
+skin color: F4DFBA */
+
+
+
+body {
+    min-height: 100vh;
+    background-image: url("../images/backgroundImage.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #F4DFBA;
+
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 80px 1fr 60px;
+    grid-template-areas:
+        "header header header header header header"
+        "nav content content content content content"
+        "footer footer footer footer footer footer";
+}
+
+.header {
+    width: 100%;
+    grid-area: header;
+
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #EEC373;
+    background-color: #FFEED9;
+    opacity: 0.6;
+    color: #22092C;
+}
+
+.navigation {
+    grid-area: nav;
+
+    border-right: 1px solid #EEC373;
+    background-color: #FFEED9;
+    opacity: 0.6;
+}
+
+ul {
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 30px;
+}
+
+li {
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+
+    color: #22092C;
+}
+
+a:hover {
+    color: #872341;
+    text-decoration: underline;
+}
+
+.content {
+    grid-area: content;
+    width: 100%;
+    height: 100%;
+
+    padding: 30px 0;
+}
+
+.footer {
+    grid-area: footer;
+
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #EEC373;
+    background-color: #FFEED9;
+    opacity: 0.6;
+}
+
+h1 {
+    margin: 0;
+}
+
 .flex {
     display: flex;
-    gap: 35px;
+    gap: 30px;
 }
 
 .flexVertical {
@@ -17,28 +124,21 @@
     text-align: center;
 }
 
-.marginTop50
-{
-    margin-top: 50px;
-}
-.marginBot30
-{
-    margin-bottom: 30px;
-}
-
 .recipeContainer {
-    width: 90%;
+    width: 100%;
     justify-content: space-evenly;
 }
 
-.buttonContainer
-{
+.buttonContainer {
     width: 100%;
     text-align: center;
 }
 
-.button
-{
-    width: 25%;
+.button {
+    width: 20%;
     height: 50px;
+
+    background-color: #EEC373;
+    color: #22092C;
+    opacity: 0.8;
 }
