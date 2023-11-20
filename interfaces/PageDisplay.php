@@ -1,5 +1,5 @@
 <?php
     interface PageDisplay {
-        public function displayPage();
+        public function displayPage(): string;
     }
 ?>
