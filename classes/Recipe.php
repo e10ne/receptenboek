@@ -3,10 +3,6 @@
         protected Database $database;
         protected $data;
 
-        private function validateID() {
-            
-        }
-
         public function create(array $values)
         {
             
@@ -14,7 +10,12 @@
 
         public function findOne(int $id)
         {
+            $recipe = $this->database->run("SELECT * FROM `recipes` where `id` = :id", ["id" => $id])->fetch();
+
+            $ingredientsQuery = "SELECT `ingredients`.`name`, `ingredients`.`id` AS ingredient_id FROM `recipe_ingredients` RIGHT JOIN `ingredients` ON `recipe_ingredients`.`ingredient_id` = `ingredients`.`id` WHERE `recipe_ingredients`.`recipe_id` = :id";
+            $ingredients = $this->database->run($ingredientsQuery, ["id" =>$id])->fetchAll();
             
+            $this->data = ["recipe" => $recipe, "ingredients" => $ingredients];
         }
 
         public function findMultiple(int $limit)

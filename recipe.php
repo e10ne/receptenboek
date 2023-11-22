@@ -1,6 +1,9 @@
 <?php
     declare(strict_types = 1);
     require_once("./classes/Database.php");
+    require_once("./interfaces/DatabaseOperations.php");
+    require_once("./interfaces/PageDisplay.php");
+    require_once("./classes/Recipe.php");
     require_once("./classes/RecipePage.php");
 
     $env = parse_ini_file(".env", false, INI_SCANNER_RAW);
@@ -14,22 +17,13 @@
 
     $recipe = new RecipePage($database);
     
-    $id = 1;
-    
-    $mainTemplate = file_get_contents("./templates/layout.html", true);
-    $contentTemplate = file_get_contents("./templates/singleRecipe.html", true);
-    
-    // $statement = $database->run("SELECT * FROM recipes WHERE id = ?", [$id]);
-    // $data = $statement->fetch();
+    if (!isset($_GET["id"]) || empty($_GET["id"])) {
+        // redirect to index?
+    }
 
-    
+    $id = (int) $_GET["id"];
 
-    $recipeReplace = ["{title}", "{preperation}","{image_url}" , "{ingredientlist}", "{description}"];
-    $recipeValues = [$data["name"], $data["preperation"], $data["image_url"] ,"", $data["description"]];
-    $recipeContent = str_replace($recipeReplace, $recipeValues, $contentTemplate);
-
-    $mainReplace = ["{pageTitle}", "{pageContent}"];
-    $mainValues = [$data["name"], $recipeContent];
-    echo str_replace($mainReplace, $mainValues, $mainTemplate);
+    $recipe->findOne($id);
     
+    echo $recipe->displayPage();
 ?>
