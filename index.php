@@ -14,7 +14,7 @@ declare(strict_types=1);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="Styles/normalize.css">
-    <link rel="stylesheet" href="Styles/recicpeBook.css">
+    <link rel="stylesheet" href="Styles/recipeBook.css">
 
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>Recipe Book:</title>
