@@ -4,6 +4,8 @@
     require_once("./interfaces/DatabaseOperations.php");
     require_once("./interfaces/PageDisplay.php");
     require_once("./classes/Recipe.php");
+    require_once("./classes/Ingredient.php");
+    require_once("./classes/RecipeDB.php");
     require_once("./classes/RecipePage.php");
 
     $env = parse_ini_file(".env", false, INI_SCANNER_RAW);
@@ -21,9 +23,9 @@
         // redirect to index?
     }
 
-    $id = (int) $_GET["id"];
+    $id = $_GET["id"] ?? 0;
 
-    $recipe->findOne($id);
+    $recipe->findOne((int)$id);
     
     echo $recipe->displayPage();
 ?>
