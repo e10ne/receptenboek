@@ -18,10 +18,6 @@
     $database = new Database($dsn, $username, $password);
 
     $recipe = new RecipePage($database);
-    
-    if (!isset($_GET["id"]) || empty($_GET["id"])) {
-        // redirect to index?
-    }
 
     $id = $_GET["id"] ?? 0;
 
