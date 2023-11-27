@@ -1,41 +1,32 @@
 <?php
-    class Recipe implements DatabaseOperations {
-        protected Database $database;
-        protected $data;
+    Class Recipe {
+        private int $id;
+        private string $name;
+        private string $description;
+        private string $preperation;
+        private string $image_url;
+        private string $timestamp;
+        private array $ingredients;
 
-        public function create(array $values)
+        public function getName(): string
         {
-            
+            return $this->name;
         }
 
-        public function findOne(int $id)
+        public function getImage(): string
         {
-            $recipe = $this->database->run("SELECT * FROM `recipes` where `id` = :id", ["id" => $id])->fetch();
-
-            $ingredientsQuery = "SELECT `ingredients`.`name`, `ingredients`.`id` AS ingredient_id FROM `recipe_ingredients` RIGHT JOIN `ingredients` ON `recipe_ingredients`.`ingredient_id` = `ingredients`.`id` WHERE `recipe_ingredients`.`recipe_id` = :id";
-            $ingredients = $this->database->run($ingredientsQuery, ["id" =>$id])->fetchAll();
-            
-            $this->data = ["recipe" => $recipe, "ingredients" => $ingredients];
+            return $this->image_url;
         }
 
-        public function findMultiple(int $limit)
+        public function getDescription(): string
         {
-            
+            return $this->description;
         }
 
-        public function update(int $id, array $values)
+        public function getPreperation(): string
         {
-            
+            return $this->preperation;
         }
-
-        public function delete(int $id)
-        {
-            
-        }
-
-        public function __construct(Database $database)
-        {
-            $this->database = $database;            
-        }
+        
     }
 ?>

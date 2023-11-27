@@ -1,5 +1,12 @@
 <?php
-    class RecipePage extends Recipe implements PageDisplay {
+    class RecipePage extends RecipeDB implements PageDisplay {
+        private string $pageTitle;
+
+        private function setTitle(string $title): void
+        {
+            $this->pageTitle = $title;
+        }
+
         private function displayIngredients(): string
         {
             $output = "";
@@ -7,7 +14,7 @@
             foreach($ingredients as $ingredient) {
                 $template = file_get_contents("./templates/ingredient.html");
                 $replace = "{ingredientName}";
-                $value = $ingredient["name"];
+                $value = $ingredient->getName();
                 $output .= str_replace($replace, $value, $template);
             }
             
@@ -20,9 +27,20 @@
             $template = file_get_contents("./templates/singleRecipe.html");
             $replace = ["{image_url}", "{title}", "{description}", "{preperation}", "{ingredientlist}"];
             $recipe = $this->data["recipe"];
+            $this->setTitle($recipe->getName());
             $ingredients = $this->displayIngredients();
-            $values = [$recipe["image_url"], $recipe["name"], $recipe["description"], $recipe["preperation"], $ingredients];
+            $values = [$recipe->getImage(), $recipe->getName(), $recipe->getDescription(), $recipe->getPreperation(), $ingredients];
             
+            return str_replace($replace, $values, $template);
+        }
+
+        private function displayNotFound(): string
+        {
+            $template = file_get_contents("./templates/notFound.html");
+            $replace = ["{dataType}"];
+            $values = ["recept"];
+            $this->setTitle("Recept niet gevonden");
+
             return str_replace($replace, $values, $template);
         }
         
@@ -30,9 +48,13 @@
         {
             $template = file_get_contents("./templates/layout.html");
             $replace = ["{pageTitle}", "{pageContent}"];
-            $content = $this->displayRecipe();
+            if (!empty($this->data["recipe"])) {
+                $content = $this->displayRecipe();
+            } else {
+                $content = $this->displayNotFound();
+            }
             // Replace first value when implementing
-            $values = ["", $content];
+            $values = [$this->pageTitle, $content];
 
             return str_replace($replace, $values, $template);
         }
