@@ -8,6 +8,11 @@
         private string $timestamp;
         private array $ingredients;
 
+        public function getID(): int
+        {
+            return $this->id;
+        }
+        
         public function getName(): string
         {
             return $this->name;
@@ -27,6 +32,11 @@
         {
             return $this->preperation;
         }
-        
+
+        public function getTimestamp(): string
+        {
+            return $this->timestamp;
+        }
+
     }
 ?>
