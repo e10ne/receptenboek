@@ -14,7 +14,7 @@ declare(strict_types=1);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="Styles/normalize.css">
-    <link rel="stylesheet" href="Styles/recicpeBook.css">
+    <link rel="stylesheet" href="Styles/recipeBook.css">
 
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>Recipe Book:</title>
@@ -38,15 +38,55 @@ declare(strict_types=1);
         <div class="flex flexVertical">
             <div class="flex flexVertical">
                 <div class="flex flexHorizontal recipeContainer">
-                    <a href=""><img src="https://placehold.co/300x200" alt=""></a>
-                    <a href=""><img src="https://placehold.co/300x200" alt=""></a>
-                    <a href=""><img src="https://placehold.co/300x200" alt=""></a>
+
+                    <a href="recipe.php" class="recipePreviewBox flex">
+                        <div>
+                            <h3>Recipe Name</h1>
+                                <p>Recipe description</p>
+                        </div>
+                    </a>
+
+                    <a href="recipe.php" class="recipePreviewBox flex">
+                        <div>
+                            <h3>Recipe Name</h1>
+                                <p>Recipe description</p>
+                        </div>
+                    </a>
+
+                    <a href="recipe.php" class="recipePreviewBox flex">
+                        <div>
+                            <h3>Recipe Name</h1>
+                                <p>Recipe description</p>
+                        </div>
+                    </a>
+
+                    <!-- <a href="recipe.php"><img class="imageSize" src="https://placehold.co/300x200" alt=""></a>
+                    <a href="recipe.php"><img class="imageSize" src="https://placehold.co/300x200" alt=""></a>
+                    <a href="recipe.php"><img class="imageSize" src="https://placehold.co/300x200" alt=""></a> -->
                 </div>
                 <div class="flex flexHorizontal recipeContainer">
-                    <a href=""><img src="https://placehold.co/300x200" alt=""></a>
-                    <a href=""><img src="https://placehold.co/300x200" alt=""></a>
-                    <a href=""><img src="https://placehold.co/300x200" alt=""></a>
+                    <a href="recipe.php" class="recipePreviewBox flex">
+                        <div>
+                            <h3>Recipe Name</h1>
+                                <p>Recipe description</p>
+                        </div>
+                    </a>
+
+                    <a href="recipe.php" class="recipePreviewBox flex">
+                        <div>
+                            <h3>Recipe Name</h1>
+                                <p>Recipe description</p>
+                        </div>
+                    </a>
+
+                    <a href="recipe.php" class="recipePreviewBox flex">
+                        <div>
+                            <h3>Recipe Name</h1>
+                                <p>Recipe description</p>
+                        </div>
+                    </a>
                 </div>
+
             </div>
             <div class="buttonContainer">
                 <button class="button">Show More</button>
