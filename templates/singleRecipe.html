@@ -1,7 +1,37 @@
-<main class="flex flexVertical">
+<!-- <main class="flex flexVertical">
     <img alt="" src="{image_url}" width="1024" />
     <h1>{title}</h1>
     <p>{description}</p>
     <ul>{ingredientlist}</ul>
     <p>{preperation}</p>
-</main>
+</main> -->
+
+<div class="content recipeGrid">
+    <div class="imgUrl">
+        <img class="recipeImage" src="{image_url}" alt="">
+    </div>
+
+    <div class="title">
+        <h1 class="recipeTitle">{title}</h1>
+    </div>
+
+    <div class="ingredients bottomSpacing">
+        <ul class="recipeIngredientsList">
+            
+            {ingredientlist}
+
+            <!-- foreach(ingredientList as ingredient)
+            {
+                echo <li class="recipeIngredient">{ingredient}</li>
+            } -->
+        </ul>
+    </div>
+
+    <div class="descr">
+        <p class="spacing bottomSpacing">{description}</p>
+    </div>
+
+    <div class="prep">
+        <p class="spacing bottomSpacing">{preperation}</p>
+    </div>
+</div>
