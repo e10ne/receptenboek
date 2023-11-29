@@ -20,7 +20,9 @@
 
         public function findMultiple(int $limit)
         {
-            
+            $recipes = $this->database->run("SELECT `id`, `name`, `description` from recipes ORDER BY `id` DESC LIMIT :limit", ["limit" =>$limit])->fetchAll(PDO::FETCH_CLASS, "Recipe");
+
+            $this->data = $recipes;
         }
 
         public function update(int $id, array $values)
