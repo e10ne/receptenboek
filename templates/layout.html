@@ -8,12 +8,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="stylesheet" href="Styles/normalize.css">
-        <link rel="stylesheet" href="Styles/recicpeBook.css">
+        <link rel="stylesheet" href="Styles/recipeBook.css">
 
         <!-- Use title if it's in the page YAML frontmatter -->
         <title>Recipe Book: {pageTitle}</title>
     </head>
-    <body>
+    <body class="gridContainer">
+        <header class="header flex">
+            <h1>Receptenboek:</h1>
+        </header>
+    
+        <nav class="navigation">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Add Recipe</a></li>
+                <li><a href="#">Add Category</a></li>
+            </ul>
+        </nav>
         {pageContent}
+        <footer class="footer flex">
+            <p class="center">Gemaakt door: Etienne en Sabrina</p>
+        </footer>
     </body>
 </html>
