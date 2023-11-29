@@ -60,6 +60,99 @@ body {
     opacity: 0.7;
 }
 
+.content {
+    grid-area: content;
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+    grid-area: footer;
+
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #EEC373;
+    background-color: #FFEED9;
+    opacity: 0.7;
+}
+
+.recipeGrid {
+    display: grid;
+    grid-template-columns: 30px repeat(5, 1fr) 30px;
+    grid-template-rows: 30px 230px 100px 1fr 3fr 30px;
+    grid-template-areas:
+        ". . . . . . ."
+        ". img img img img img ."
+        ". title title title title title ."
+        ". ingredients description description description description ."
+        ". ingredients preperation preperation preperation preperation ."
+        ". . . . . . .";
+}
+
+.imgUrl {
+    grid-area: img;
+    background-color: #F4DFBA;
+    opacity: 0.8;
+}
+
+.recipeImage {
+    height: 200px;
+    width: 300px;
+    margin-left: 200px;
+    margin-top: 30px;
+}
+
+.title {
+    grid-area: title;
+    display: flex;
+    background-color: #F4DFBA;
+    opacity: 0.8;
+}
+
+.recipeTitle {
+    margin-left: 200px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.ingredients {
+    grid-area: ingredients;
+    background-color: #F4DFBA;
+    opacity: 0.8;
+}
+
+.recipeIngredientsList {
+    padding: 0 0px;
+}
+
+.recipeIngredient {
+    list-style: inside;
+}
+
+.descr {
+    grid-area: description;
+    background-color: #F4DFBA;
+    opacity: 0.8;
+}
+
+.prep {
+    grid-area: preperation;
+    background-color: #F4DFBA;
+    opacity: 0.8;
+}
+
+.spacing
+{
+    padding: 0 40px 0 30px;
+}
+
+.bottomSpacing
+{
+    padding-bottom: 30px;
+}
+
+
+
 ul {
     margin: 20px 20px;
     display: flex;
@@ -84,27 +177,11 @@ a:hover {
     text-decoration: underline;
 }
 
-.content {
-    grid-area: content;
-    width: 100%;
-    height: 100%;
-
-    padding: 30px 0;
-}
-
-.footer {
-    grid-area: footer;
-
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid #EEC373;
-    background-color: #FFEED9;
-    opacity: 0.7;
-}
-
 h1 {
     margin: 0;
 }
+
+
 
 .flex {
     display: flex;
@@ -144,8 +221,7 @@ h1 {
     opacity: 0.8;
 }
 
-.recipePreviewBox
-{
+.recipePreviewBox {
     background-color: #F4DFBA;
     height: 200px;
     width: 300px;

@@ -35,51 +35,49 @@ declare(strict_types=1);
     </nav>
 
     <div class="content">
-        <div class="flex flexVertical">
+        <div class="flex flexVertical spaceAround">
+        <div></div>
             <div class="flex flexVertical">
                 <div class="flex flexHorizontal recipeContainer">
 
-                    <a href="recipe.php" class="recipePreviewBox flex">
+                    <a href="recipeView.php" class="recipePreviewBox flex">
                         <div>
                             <h3>Recipe Name</h1>
                                 <p>Recipe description</p>
                         </div>
                     </a>
 
-                    <a href="recipe.php" class="recipePreviewBox flex">
+                    <a href="recipeView.php" class="recipePreviewBox flex">
                         <div>
                             <h3>Recipe Name</h1>
                                 <p>Recipe description</p>
                         </div>
                     </a>
 
-                    <a href="recipe.php" class="recipePreviewBox flex">
+                    <a href="recipeView.php" class="recipePreviewBox flex">
                         <div>
                             <h3>Recipe Name</h1>
                                 <p>Recipe description</p>
                         </div>
                     </a>
 
-                    <!-- <a href="recipe.php"><img class="imageSize" src="https://placehold.co/300x200" alt=""></a>
-                    <a href="recipe.php"><img class="imageSize" src="https://placehold.co/300x200" alt=""></a>
-                    <a href="recipe.php"><img class="imageSize" src="https://placehold.co/300x200" alt=""></a> -->
                 </div>
                 <div class="flex flexHorizontal recipeContainer">
-                    <a href="recipe.php" class="recipePreviewBox flex">
+                    <a href="recipeView.php" class="recipePreviewBox flex">
                         <div>
                             <h3>Recipe Name</h1>
                                 <p>Recipe description</p>
                         </div>
                     </a>
 
-                    <a href="recipe.php" class="recipePreviewBox flex">
+                    <a href="recipeView.php" class="recipePreviewBox flex">
                         <div>
                             <h3>Recipe Name</h1>
                                 <p>Recipe description</p>
                         </div>
                     </a>
 
-                    <a href="recipe.php" class="recipePreviewBox flex">
+                    <a href="recipeView.php" class="recipePreviewBox flex">
                         <div>
                             <h3>Recipe Name</h1>
                                 <p>Recipe description</p>
@@ -91,6 +89,7 @@ declare(strict_types=1);
             <div class="buttonContainer">
                 <button class="button">Show More</button>
             </div>
+            <div></div>
         </div>
     </div>
 
