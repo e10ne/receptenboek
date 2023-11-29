@@ -95,13 +95,6 @@ body {
     opacity: 0.8;
 }
 
-.recipeImage {
-    height: 200px;
-    width: 300px;
-    margin-left: 200px;
-    margin-top: 30px;
-}
-
 .title {
     grid-area: title;
     display: flex;
@@ -109,11 +102,6 @@ body {
     opacity: 0.8;
 }
 
-.recipeTitle {
-    margin-left: 200px;
-    margin-top: auto;
-    margin-bottom: auto;
-}
 
 .ingredients {
     grid-area: ingredients;
@@ -121,13 +109,6 @@ body {
     opacity: 0.8;
 }
 
-.recipeIngredientsList {
-    padding: 0 0px;
-}
-
-.recipeIngredient {
-    list-style: inside;
-}
 
 .descr {
     grid-area: description;
@@ -141,13 +122,32 @@ body {
     opacity: 0.8;
 }
 
-.spacing
-{
+.recipeImage {
+    height: 200px;
+    width: 300px;
+    margin-left: 200px;
+    margin-top: 30px;
+}
+
+.recipeTitle {
+    margin-left: 200px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.recipeIngredientsList {
+    padding: 0 0px;
+}
+
+.recipeIngredient {
+    list-style: inside;
+}
+
+.spacing {
     padding: 0 40px 0 30px;
 }
 
-.bottomSpacing
-{
+.bottomSpacing {
     padding-bottom: 30px;
 }
 
@@ -203,8 +203,19 @@ h1 {
 }
 
 .recipeContainer {
-    width: 100%;
+    width: 95%;
     justify-content: space-evenly;
+}
+
+.recipePreviewBox {
+    background-color: #F4DFBA;
+    height: 20rem;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .buttonContainer {
@@ -219,14 +230,4 @@ h1 {
     background-color: #EEC373;
     color: #22092C;
     opacity: 0.8;
-}
-
-.recipePreviewBox {
-    background-color: #F4DFBA;
-    height: 200px;
-    width: 300px;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.8;
-    font-size: 1.5rem;
 }
