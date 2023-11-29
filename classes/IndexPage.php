@@ -3,11 +3,15 @@
 
         private function displayShowMoreButton(): string
         {
-            $template = file_get_contents("./templates/showMoreButton.html", true);
-            $replace = "{limit}";
-            $value = "6";
+            if ($this->hasMore) {
+                $template = file_get_contents("./templates/showMoreButton.html", true);
+                $replace = "{limit}";
+                $value = $this->newLimit;
 
-            return str_replace($replace, $value, $template);
+                return str_replace($replace, $value, $template);
+            } else {
+                return "";
+            }
         }
 
         private function displayRecipe(Recipe $recipe): string
