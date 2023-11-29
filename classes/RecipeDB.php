@@ -3,7 +3,7 @@
         protected Database $database;
         protected array $data;
         protected int $newLimit;
-        protected bool $hasMore;
+        protected bool $hasMoreRecipes;
 
         public function create(array $values)
         {
@@ -26,10 +26,10 @@
             $recipes = $this->database->run("SELECT `id`, `name`, `description` from recipes ORDER BY `id` DESC LIMIT :limit", ["limit" =>$limitPlusOne])->fetchAll(PDO::FETCH_CLASS, "Recipe");
 
             if (count($recipes) === $limitPlusOne) {
-                $this->hasMore = true;
+                $this->hasMoreRecipes = true;
                 $this->newLimit = $limit + 3;
             } else {
-                $this->hasMore = false;
+                $this->hasMoreRecipes = false;
             }
 
             $this->data = array_slice($recipes, 0, $limit);

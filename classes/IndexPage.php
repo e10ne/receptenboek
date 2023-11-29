@@ -3,7 +3,7 @@
 
         private function displayShowMoreButton(): string
         {
-            if ($this->hasMore) {
+            if ($this->hasMoreRecipes) {
                 $template = file_get_contents("./templates/showMoreButton.html", true);
                 $replace = "{limit}";
                 $value = $this->newLimit;
