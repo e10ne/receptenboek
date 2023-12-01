@@ -1,7 +1,9 @@
 <?php
     class RecipeDB implements DatabaseOperations {
         protected Database $database;
-        protected $data;
+        protected array $data;
+        protected int $newLimit;
+        protected bool $hasMoreRecipes;
 
         public function create(array $values)
         {
@@ -20,9 +22,17 @@
 
         public function findMultiple(int $limit)
         {
-            $recipes = $this->database->run("SELECT `id`, `name`, `description` from recipes ORDER BY `id` DESC LIMIT :limit", ["limit" =>$limit])->fetchAll(PDO::FETCH_CLASS, "Recipe");
+            $limitPlusOne = $limit + 1;
+            $recipes = $this->database->run("SELECT `id`, `name`, `description` from recipes ORDER BY `id` DESC LIMIT :limit", ["limit" =>$limitPlusOne])->fetchAll(PDO::FETCH_CLASS, "Recipe");
 
-            $this->data = $recipes;
+            if (count($recipes) === $limitPlusOne) {
+                $this->hasMoreRecipes = true;
+                $this->newLimit = $limit + 3;
+            } else {
+                $this->hasMoreRecipes = false;
+            }
+
+            $this->data = array_slice($recipes, 0, $limit);
         }
 
         public function update(int $id, array $values)
