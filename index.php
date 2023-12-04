@@ -6,6 +6,8 @@
  require_once("./classes/Recipe.php");
  require_once("./classes/RecipeDB.php");
  require_once("./classes/IndexPage.php");
+// remove when done testing
+require_once("./classes/Validation.php");
 
  $env = parse_ini_file(".env", false, INI_SCANNER_RAW);
  $hostname = $env["DB_HOST"];
@@ -24,4 +26,10 @@
 
  echo $index->displayPage();
 
+ // remove when done testing
+ $validation = new Validation;
+$errors = $validation->validateNewRecipe("asdaf/", "aaaawqe", "", [], "");
+echo "<pre>";
+print_r($errors);
+echo "</pre>";
 ?>
